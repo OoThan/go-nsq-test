@@ -1,0 +1,8 @@
+version: '3'
+services:
+  worker1:
+    image: nsq-consumer
+    command: /app/consumer -topic email -channel default
+  worker2:
+    image: nsq-consumer
+    command: /app/consumer -topic email -channel default

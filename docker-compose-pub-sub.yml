@@ -1,0 +1,14 @@
+version: '3'
+services:
+  pubsub_fulfillment1:
+    image: nsq-consumer
+    command: /app/consumer -topic orders_placed -channel fulfillment
+  pubsub_fulfillment2:
+    image: nsq-consumer
+    command: /app/consumer -topic orders_placed -channel fulfillment
+  pubsub_email_confirmation1:
+    image: nsq-consumer
+    command: /app/consumer -topic orders_placed -channel email_confirmation
+  pubsub_email_confirmation2:
+    image: nsq-consumer
+    command: /app/consumer -topic orders_placed -channel email_confirmation
